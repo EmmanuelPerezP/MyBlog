@@ -15,7 +15,24 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf.urls import include
+from django.views.generic import RedirectView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
+
+urlpatterns += [
+    url(r'^blog/', include('blog.urls'))
+]
+
+# redirect home page to /blog/
+urlpatterns += [
+    url(r'^$', RedirectView.as_view(url='/blog/', permanent=True)),
+]
+
+# Use static() to add url mapping to serve static files during development (only)
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
