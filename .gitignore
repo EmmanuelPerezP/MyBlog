@@ -1,0 +1,8 @@
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+
+# django stuff
+*.log
+*.pot
