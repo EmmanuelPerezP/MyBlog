@@ -44,12 +44,24 @@
                       <span class="sr-only">Toggle navigation</span>
                       Menu <i class="fa fa-bars"></i>
                   </button>
-                  <a class="navbar-brand" href="index.html">Ema's Blog</a>
+                  <a class="navbar-brand" href="{% url 'index' %}">Ema's Blog</a>
               </div>
 
               <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
+                      {% if user.is_authenticated %}
+  <!-- We create the login and logout link URLs using the url template tag and
+  the names of the respective URL configurations. Note also how we have
+  appended ?next={{request.path}} to the end of the URLs. What this does is
+  add a URL parameter next containing the address (URL) of the current page,
+  to the end of the linked URL. After the user has successfully logged in/out,
+  the views will use this "next" value to redirect the user back to the page
+  where they first clicked the login/logout link. -->
+                      <li>
+                        <a href="{% url 'logout'%}?next={{request.path}}">Logout</a>
+                      </li>
+                      {% endif %}
                       <li>
                           <a href="{% url 'index' %}">Home</a>
                       </li>
