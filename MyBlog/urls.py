@@ -36,3 +36,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+# Add Django site authentication urls (for login, logout, password management)
+urlpatterns += [
+    url(r'^accounts/', include('django.contrib.auth.urls')),
+    url(r'^login/$', RedirectView.as_view(url='/accounts/login/',
+                                          permanent=True)),
+]
