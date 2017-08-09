@@ -61,6 +61,9 @@
                       <li>
                         <a href="{% url 'logout'%}?next={{request.path}}">Logout</a>
                       </li>
+                      <li>
+                        <a href="{% url 'newPost' %}">New Post</a>
+                      </li>
                       {% endif %}
                       <li>
                           <a href="{% url 'index' %}">Home</a>

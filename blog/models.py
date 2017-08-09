@@ -10,12 +10,12 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     subtitle = models.CharField(max_length=255)
     bodyHTML = models.TextField()
-    dateCreated = models.DateTimeField()
+    dateCreated = models.DateTimeField(auto_now_add=True)
     postStatus = models.BooleanField(default=False)
-    visits = models.BigIntegerField()
-    likes = models.BigIntegerField()
-    datePublished = models.DateTimeField()
-    dateLastUpdated = models.DateTimeField()
+    visits = models.BigIntegerField(default=0, editable=False)
+    likes = models.BigIntegerField(default=0, editable=False)
+    datePublished = models.DateTimeField(auto_now_add=True)
+    dateLastUpdated = models.DateTimeField(auto_now=True)
 
     category = models.ForeignKey('Category', null=True,
                                  on_delete=models.SET_NULL)
