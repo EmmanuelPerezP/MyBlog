@@ -5,4 +5,4 @@ class newPostModelForm(ModelForm):
     class Meta:
         model = Post
         fields = '__all__'
-        
+            
