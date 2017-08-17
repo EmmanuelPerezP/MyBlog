@@ -3,6 +3,9 @@ from django.views import generic
 from .models import Post, Tag, Category
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin
+
 
 class BlogPostListView(generic.ListView):
     model = Post
@@ -12,21 +15,32 @@ class BlogPostListView(generic.ListView):
 
 
 class BlogPost(generic.DetailView):
+
     model = Post
     # context_object_name = 'post'
     template_name = 'post.html'
 
-class BlogPostCreate(generic.CreateView):
+
+class BlogPostCreate(LoginRequiredMixin, PermissionRequiredMixin,
+                     generic.CreateView):
+    permission_required = 'blog.is_staff'
     model = Post
     fields = '__all__'
 
-class BlogPostUpdate(generic.UpdateView):
+
+class BlogPostUpdate(LoginRequiredMixin, PermissionRequiredMixin,
+                     generic.UpdateView):
+    permission_required = 'blog.is_staff'
     model = Post
     fields = '__all__'
 
-class BlogPostDelete(generic.DeleteView):
+
+class BlogPostDelete(LoginRequiredMixin, PermissionRequiredMixin,
+                     generic.DeleteView):
+    permission_required = 'blog.is_staff'
     model = Post
-    success_url = reverse_lazy('/blog/')
+    success_url = reverse_lazy('index')
+
 
 class AboutMe(generic.TemplateView):
     template_name = 'about.html'

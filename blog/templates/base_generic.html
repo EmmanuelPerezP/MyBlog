@@ -20,7 +20,7 @@
     <link href="{% static 'css/styles.css' %}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -62,7 +62,7 @@
                         <a href="{% url 'logout'%}?next={{request.path}}">Logout</a>
                       </li>
                       <li>
-                        <a href="{% url 'newPost' %}">New Post</a>
+                        <a href="{% url 'post_create' %}">New Post</a>
                       </li>
                       {% endif %}
                       <li>
@@ -132,6 +132,7 @@
     </main>
 
     <nav id="menu">
+      <!--
       {% block mobile-menu %}
       <div class="container-fluid">
         <div class="row">
@@ -143,6 +144,7 @@
         </ul>
         </div>
       {% endblock mobile-menu %}
+    -->
     </nav>
 
 

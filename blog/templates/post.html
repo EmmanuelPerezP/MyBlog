@@ -14,6 +14,17 @@
                         <h2 class="subheading">{{ post.subtitle }}</h2>
                         <span class="meta">Posted by <a href="#">Emmanuel Perez</a> on {{ post.datePublished }}</span>
                     </div>
+
+                    {% if user.is_authenticated %}
+                    <div class="row">
+                      <div class="col-lg-2">
+                        <a class="btn btn-default" href="{{ request.path }}/update/" role="button">Edit</a>
+                      </div>
+                      <div class="col-lg-2">
+                        <a class="btn btn-default" href="{{ request.path }}/delete/" role="button">Delete</a>
+                      </div>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

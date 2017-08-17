@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+{% block content %}
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+
+    {% load static %}
+    <header class="intro-header" style="background-image: url('{% static 'img/contact-bg.jpg' %}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="page-heading">
+                        <h1>Delete Post</h1>
+                        <hr class="small">
+                        <span class="subheading">Confirm deletion</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <p>Are you sure that you want to delete {{ post.title }} ?</p>
+              <form action="" method="POST">
+                {% csrf_token %}
+                <input type="submit" action="" value="Yes, delete." />
+              </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
