@@ -9,7 +9,6 @@ __pycache__/
 
 env/
 eb-virt/
-db.sqlite3
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
