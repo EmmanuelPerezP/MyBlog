@@ -9,7 +9,6 @@ __pycache__/
 
 env/
 eb-virt/
-MyBlog/settings.py
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
