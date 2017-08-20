@@ -11,6 +11,7 @@ env/
 eb-virt/
 MyBlog/settings.py
 
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
