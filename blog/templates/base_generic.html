@@ -12,8 +12,9 @@
     {%block title %}<title>Clean Blog</title>{% endblock %}
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 
     <!-- Theme CSS -->
     {% load static %}
@@ -36,19 +37,17 @@
 <body>
       <!-- Navigation -->
       {% block navigationbar %}
-      <nav class="navbar navbar-default navbar-custom navbar-static-top is-visible is-fixed">
+      <nav class="navbar navbar-dark navbar-custom navbar-static-top is-visible is-fixed navbar-expand-lg">
           <div class="container-fluid">
               <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header page-scroll">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <a class="navbar-brand" href="{% url 'index' %}">Ema's Blog</a>
+                  <button type="button " class="navbar-toggler" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                       <span class="sr-only">Toggle navigation</span>
                       Menu <i class="fa fa-bars"></i>
                   </button>
-                  <a class="navbar-brand" href="{% url 'index' %}">Ema's Blog</a>
-              </div>
 
               <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <div class="collapse navbar-collapse justify-content-end" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
                       {% if user.is_authenticated %}
   <!-- We create the login and logout link URLs using the url template tag and
@@ -95,8 +94,8 @@
       <!-- Footer -->
       <footer>
           <div class="container">
-              <div class="row">
-                  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="row  justify-content-center">
+                  <div class="col-lg-8 col-md-10">
                       <ul class="list-inline text-center">
                           <li>
                               <a href="#">
@@ -147,15 +146,10 @@
     -->
     </nav>
 
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <!-- Theme JavaScript -->
-    <!--<script src="js/clean-blog.min.js"></script> -->
+    <!-- Boostrap javascript and plugins -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 
     <!--slide out scripts and library -->
@@ -169,7 +163,6 @@
         'side': 'right'
       });
     </script>
-
     <!-- slide out documentation https://github.com/mango/slideout#faq -->
 
 </body>

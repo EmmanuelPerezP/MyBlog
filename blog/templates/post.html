@@ -7,8 +7,8 @@
     {% load static %}
     <header class="intro-header" style="background-image: url('{% static 'img/post-bg.jpg' %}')">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-10 col-lg-offset-1">
                     <div class="post-heading">
                         <h1>{{ post.title }}</h1>
                         <h2 class="subheading">{{ post.subtitle }}</h2>
@@ -18,10 +18,10 @@
                     {% if user.is_authenticated %}
                     <div class="row">
                       <div class="col-lg-2">
-                        <a class="btn btn-default" href="{{ request.path }}/update/" role="button">Edit</a>
+                        <a class="btn btn-secondary" href="{{ request.path }}/update/" role="button">Edit</a>
                       </div>
                       <div class="col-lg-2">
-                        <a class="btn btn-default" href="{{ request.path }}/delete/" role="button">Delete</a>
+                        <a class="btn btn-secondary" href="{{ request.path }}/delete/" role="button">Delete</a>
                       </div>
                     </div>
                     {% endif %}
@@ -33,8 +33,8 @@
     <!-- Post Content -->
     <article>
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-md-10">
 
                   {{ post.bodyHTML|safe }}
 
