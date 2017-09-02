@@ -32,7 +32,6 @@
 
 <body>
 
-
     <!-- Navigation -->
     {% block navigationbar %}
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -72,6 +71,7 @@
       </div>
     </nav>
     {% endblock navigationbar %}
+
 
     <!-- slideout panel -->
     <main id="panel">
@@ -120,6 +120,9 @@
     </main>
 
     <nav id="menu">
+      <header>
+        <h2>Menu</h2>
+      </header>
       <!--
       {% block mobile-menu %}
       <div class="container-fluid">
@@ -149,7 +152,11 @@
         'menu': document.getElementById('menu'),
         'padding': 256,
         'tolerance': 70,
-        'side': 'right'
+        'side':'right'
+      });
+      // Toggle button
+      document.querySelector('.toggle-button').addEventListener('click', function() {
+        slideout.toggle();
       });
     </script>
     <!-- slide out documentation https://github.com/mango/slideout#faq -->
