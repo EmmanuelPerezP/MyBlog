@@ -1,28 +1,28 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-      <!-- Page Header -->
-      <!-- Set your background image for this header on the line below. -->
-      {% load static %}
-      <header class="intro-header" style="background-image: url('{% static 'img/home-bg.jpg' %}')">
-          <div class="container">
-              <div class="row justify-content-center">
-                  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                      <div class="site-heading">
-                          <h1>Ema's Blog</h1>
-                          <hr class="small">
-                          <span class="subheading">Bienvenido a mi blog!</span>
-                      </div>
-                  </div>
-              </div>
+
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    {% load static %}
+    <header class="masthead" style="background-image: url('{% static 'img/home-bg.jpg' %}')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>Ema's Blog</h1>
+              <span class="subheading">Bienvenido a mi blog!</span>
+            </div>
           </div>
-      </header>
+        </div>
+      </div>
+    </header>
 
-      <!-- Main Content -->
-      <div class="container-fluid">
-          <div class="row justify-content-center">
-              <div class="col-lg-8 col-md-8">
-
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10 mx-auto">
                 <!-- POSTS ---------------------------------------------------->
                 <hr>
                 {% for post in blog_posts %}
@@ -61,8 +61,6 @@
                 {% endblock %}
               <!-- end of column -->
               </div>
-
-
               <!--
               <div class="col-md-2 col-md-offset-1 visible-md-block visible-lg-block">
                 <ul class="nav nav-pills nav-stacked custom-sidebar">
@@ -75,9 +73,10 @@
                   <li><a href="#">Menu 6</a></li>
                 </ul>
               </div>
-            -->
+              -->
           </div>
       </div>
 
+      <!-- divider  -->
       <hr>
 {% endblock content %}

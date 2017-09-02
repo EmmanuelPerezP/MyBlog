@@ -1,46 +1,47 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
+
+
+
     <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-
     {% load static %}
-    <header class="intro-header" style="background-image: url('{% static 'img/post-bg.jpg' %}')">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-10 col-lg-offset-1">
-                    <div class="post-heading">
-                        <h1>{{ post.title }}</h1>
-                        <h2 class="subheading">{{ post.subtitle }}</h2>
-                        <span class="meta">Posted by <a href="#">Emmanuel Perez</a> on {{ post.datePublished }}</span>
-                    </div>
-
-                    {% if user.is_authenticated %}
-                    <div class="row">
-                      <div class="col-lg-2">
-                        <a class="btn btn-secondary" href="{{ request.path }}/update/" role="button">Edit</a>
-                      </div>
-                      <div class="col-lg-2">
-                        <a class="btn btn-secondary" href="{{ request.path }}/delete/" role="button">Delete</a>
-                      </div>
-                    </div>
-                    {% endif %}
-                </div>
+    <header class="masthead" style="background-image: url('{% static 'img/post-bg.jpg' %}')">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>{{ post.title }}</h1>
+              <h2 class="subheading">{{ post.subtitle }} </h2>
+              <span class="meta">Posted by
+                <a href="#">Emmanuel Perez</a>
+                on {{ post.datepublished }}</span>
             </div>
+            {% if user.is_authenticated %}
+            <div class="row">
+              <div class="col-lg-2">
+                <a class="btn btn-secondary" href="{{ request.path }}/update/" role="button">Edit</a>
+              </div>
+              <div class="col-lg-2">
+                <a class="btn btn-secondary" href="{{ request.path }}/delete/" role="button">Delete</a>
+              </div>
+            </div>
+            {% endif %}
+          </div>
         </div>
+      </div>
     </header>
 
     <!-- Post Content -->
+    <!-- Post Content -->
     <article>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8 col-md-10">
-
-                  {{ post.bodyHTML|safe }}
-
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            {{ post.bodyHTML|safe }}
             </div>
-        </div>
+          </div>
+      </div>
     </article>
 
     <hr>
