@@ -12,6 +12,7 @@ class BlogPostListView(generic.ListView):
     context_object_name = 'blog_posts'
     template_name = 'index.html'
     paginate_by = 3
+    ordering = ['-dateCreated']
 
 
 class BlogPost(generic.DetailView):
