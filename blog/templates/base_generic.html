@@ -53,10 +53,10 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'post_create' %}">New Post</a>
             </li>
-            {% endif %}
             <li class="nav-item">
               <a class="nav-link" href="/blog/post/1">Sample Post</a>
             </li>
+            {% endif %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'index' %}">Home</a>
             </li>
@@ -86,10 +86,10 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <ul class="list-inline text-center">
               <li class="list-inline-item">
-                <a href="#">
+                <a href="{% url 'contact' %}">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
@@ -97,7 +97,7 @@
                 <a href="#">
                   <span class="fa-stack fa-lg">
                     <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                    <i class="fa fa-youtube-play fa-stack-1x fa-inverse"></i>
                   </span>
                 </a>
               </li>
@@ -110,7 +110,7 @@
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; Your Website 2017</p>
+            <p class="copyright text-muted">Copyright &copy; Emmanuel Perez P. 2017</p>
           </div>
         </div>
       </div>
