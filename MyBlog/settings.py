@@ -89,10 +89,10 @@ else:
     # Local Database
     DATABASES = {
          'default': {
-             'ENGINE': 'django.db.backends.mysql',
-             'NAME': 'blog_db',
+             'ENGINE': 'django.db.backends.postgresql',
+             'NAME': 'MyBlogDB',
              'USER': os.environ['USER_SQL'],
-             'PASSWORD': '123',
+             'PASSWORD': os.environ['SQL_PASSWD'],
          }
      }
 
