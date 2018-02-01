@@ -89,7 +89,7 @@ else:
     DATABASES = {
          'default': {
              'ENGINE': 'django.db.backends.postgresql',
-             'NAME': 'MyBlogDB',
+             'NAME': 'myblogdb',
              'USER': os.environ['USER_SQL'],
              'PASSWORD': os.environ['SQL_PASSWD'],
          }
