@@ -88,12 +88,10 @@ else:
     # Local Database
     DATABASES = {
          'default': {
-             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-             'NAME': 'myblogdb',
+             'ENGINE': 'django.db.backends.postgresql',
+             'NAME': 'MyBlogDB',
              'USER': os.environ['USER_SQL'],
              'PASSWORD': os.environ['SQL_PASSWD'],
-             'HOST': 'localhost',
-             'PORT': '',
          }
      }
 
